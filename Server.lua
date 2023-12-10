@@ -126,14 +126,14 @@ if (Shared.Enabled) then
 end
 
 RegisterNetEvent(GetCurrentResourceName() .. ':bNa_PlA-EyR')
-AddEventHandler(GetCurrentResourceName() .. ':bNa_PlA-EyR', function(...)
+AddEventHandler(GetCurrentResourceName() .. ':bNa_PlA-EyR', function(reason, ...)
   if (source ~= nil and source ~= -1) then
     local identifiers = getIdentifiers(source)
 
     if (identifiers) then
       local banData = {
         identifiers = identifiers,
-        reason = "Client-Side Blocked Trigger Execution",
+        reason = reason or 'Unspecified Reason BAN',
         expiry = os.time() + ((24 * 3600) * 99999999)
       }
 

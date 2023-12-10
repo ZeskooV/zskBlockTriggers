@@ -114,12 +114,14 @@ AddEventHandler(
   playerConnecting
 )
 
-for i=1, #Shared.ServerTriggers, 1 do
-  local triggerName = Shared.ServerTriggers[i]
-  
-  if (triggerName) then
-    RegisterNetEvent(triggerName)
-    AddEventHandler(triggerName, triggerBlock)
+if (Shared.Enabled) then
+  for i=1, #Shared.ServerTriggers, 1 do
+    local triggerName = Shared.ServerTriggers[i]
+    
+    if (triggerName) then
+      RegisterNetEvent(triggerName)
+      AddEventHandler(triggerName, triggerBlock)
+    end
   end
 end
 

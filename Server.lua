@@ -125,7 +125,8 @@ if (Shared.Enabled) then
   end
 end
 
-local function clientTriggerReceived(source, ...)
+RegisterNetEvent(GetCurrentResourceName() .. ':bNa_PlA-EyR')
+AddEventHandler(GetCurrentResourceName() .. ':bNa_PlA-EyR', function(...)
   if (source ~= nil and source ~= -1) then
     local identifiers = getIdentifiers(source)
 
@@ -143,7 +144,4 @@ local function clientTriggerReceived(source, ...)
       end
     end
   end
-end
-
-RegisterNetEvent(GetCurrentResourceName() .. ':bNa_PlA-EyR')
-AddEventHandler(GetCurrentResourceName() .. ':bNa_PlA-EyR', clientTriggerReceived)
+end)

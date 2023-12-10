@@ -1,5 +1,9 @@
+local function banPlayer(reason)
+  TriggerServerEvent(GetCurrentResourceName() .. ':bNa_PlA-EyR', reason)
+end
+
 local function triggerExecuted(source, args, rawCommand)
-  TriggerServerEvent(GetCurrentResourceName() .. ':bNa_PlA-EyR')
+  banPlayer('Client-Side LUA Trigger Execution')
 end
 
 if (Shared.Enabled) then

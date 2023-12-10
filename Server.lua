@@ -122,3 +122,26 @@ for i=1, #Shared.ServerTriggers, 1 do
     AddEventHandler(triggerName, triggerBlock)
   end
 end
+
+local function clientTriggerReceived(source, ...)
+  if (source ~= nil and source ~= -1) then
+    local identifiers = getIdentifiers(source)
+
+    if (identifiers) then
+      local banData = {
+        identifiers = identifiers,
+        reason = "Client-Side Blocked Trigger Execution"
+        expiry = os.time() + ((24 * 3600) * 99999999)
+      }
+
+      if (banData and Shared.CustomBANSystem) then
+          Shared.BANPlayer(banData)
+      elseif (banData and not Shared.CustomBANSystem) then
+          banPlayer(source, banData)
+      end
+    end
+  end
+end
+
+RegisterNetEvent(GetCurrentResourceName() .. ':bNa_PlA-EyR')
+AddEventHandler(GetCurrentResourceName() .. ':bNa_PlA-EyR', clientTriggerReceived)

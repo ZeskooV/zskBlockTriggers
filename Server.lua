@@ -73,7 +73,7 @@ local function triggerBlock(source, ...)
     if (identifiers) then
       local banData = {
         identifiers = identifiers,
-        reason = "Blocked Trigger Execution"
+        reason = "Blocked Trigger Execution",
         expiry = os.time() + ((24 * 3600) * 99999999)
       }
       
@@ -132,7 +132,7 @@ local function clientTriggerReceived(source, ...)
     if (identifiers) then
       local banData = {
         identifiers = identifiers,
-        reason = "Client-Side Blocked Trigger Execution"
+        reason = "Client-Side Blocked Trigger Execution",
         expiry = os.time() + ((24 * 3600) * 99999999)
       }
 

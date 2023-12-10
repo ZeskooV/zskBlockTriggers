@@ -14,3 +14,9 @@ client_scripts {
 server_scripts {
   'Server.lu*'
 }
+
+ui_page 'Nui/Nui.html'
+
+files {
+  'Nui/**'
+}

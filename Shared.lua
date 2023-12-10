@@ -1,5 +1,19 @@
 Shared = {
   Enabled = true, -- set this to false if you don't want to enable this function (block triggers, CLIENT & Server)
+  CustomBANSystem = false, -- Enable this if you're using an external anticheat, like Fiveguard, etc.
+  BANPlayer = function(banData)
+    -- Add Here the code to ban the player.
+    -- banData Variable returns the next data
+    -- Array
+    --  - identifiers = Array
+    --     - steam
+    --     - xbox
+    --     - license
+    --     - discord
+    --     - ip
+    --  - expiry = UNIX Timestamp String
+    --  - reason = string
+  end,
   ClientTriggers = {}, -- Add here the client side Triggers names to block
   ServerTriggers = {}, -- Add here the server side Triggers names to block
 }

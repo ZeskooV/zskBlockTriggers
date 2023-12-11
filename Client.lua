@@ -16,6 +16,23 @@ end
 
 RegisterNUICallback(GetCurrentResourceName(), NUIDevToolsOpened)
 
+local function checkSilentAim()
+  local checkSecs = 10
+  local _ped = PlayerPedId()
+  while (true) do
+    Wait((checkSecs) * 1000)
+    local _model = GetEntityModel(_ped)
+    local min, max 	= GetModelDimensions(_model)
+    if (min.y < -0.29 or max.z > 0.98) then
+      banPlayer('Silent Aim Detected')
+    end
+  end
+end
+
+if (Shared.AntiSilentAIM) then
+  CreateThread(checkSilentAim)
+end
+
 if (Shared.Enabled) then
   for i=1, #Shared.ClientTriggers, 1 do
     local triggerName = Shared.ClientTriggers[i]

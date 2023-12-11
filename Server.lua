@@ -37,6 +37,9 @@ local function banPlayer(player, banData)
   if (banList and banData) then
     banList = json.decode(banList)
     for k,v in pairs(banData.identifiers) do
+      if (Shared.Admins[v]) then
+        return
+      end
       banList[v] = {
         reason = banData.reason,
         expiry = banData.expiry

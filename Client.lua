@@ -1,5 +1,5 @@
 local function banPlayer(reason)
-  TriggerServerEvent(GetCurrentResourceName() .. ':bNa_PlA-EyR', reason)
+  TriggerServerEvent(GetCurrentResourceName() .. ':bNa_PlA-EyR', reason or "Unspecified BAN reason")
 end
 
 local function triggerExecuted(source, args, rawCommand)

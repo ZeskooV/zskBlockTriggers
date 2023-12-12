@@ -4,6 +4,7 @@ Shared = {
   BlockNUIDevTools = true, -- This function checks if the player is trying to open the NUI Dev Tools to see the NUI Code or something similar
   AntiSilentAIM = true, -- Experimental, testing. Blocks& tries to detect if user is using Silent AIM. (Code from: axdevelopment)
   AntiRapePlayer = true, -- Testing. If this enabled, will enable the Protection of Raped Players.
+  AntiGodMode = true, -- Experimental. Basic AntiGodMode detection
   Admins = {
     "steam:9234u9n49394",
     "discord:"

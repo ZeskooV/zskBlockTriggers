@@ -129,25 +129,11 @@ end
 if (Shared.AntiGodMode) then
   CreateThread(
     function()
-      while (true) do
+      --[[ while (true) do
         Wait(1000)
         local _ped = PlayerPedId()
-        --[[ local checkInvincible = GetPlayerInvincible(_ped) and not isAdmin
-        if (checkInvincible) then
-          banPlayer('Use of the GodMode detected')
-        else
-          local isInvincible = GetPlayerInvincible(PlayerId()) and not isAdmin
-          if (isInvincible) then
-            FreezeEntityPosition(_ped, true)
-            DisablePlayerFiring(PlayerId(), true)
-            local curVehicle = IsPedInAnyVehicle(_ped, false) > 0
-            if (curVehicle) then
-              FreezeEntityPosition(curVehicle, true)
-            end
-          end
-        end--]]
 	-- upgrading to a better code
-      end
+      end --]]
     end
   )
 end

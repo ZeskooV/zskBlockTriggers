@@ -132,7 +132,7 @@ if (Shared.AntiGodMode) then
       while (true) do
         Wait(1000)
         local _ped = PlayerPedId()
-        local checkInvincible = GetPlayerInvincible(_ped) and not isAdmin
+        --[[ local checkInvincible = GetPlayerInvincible(_ped) and not isAdmin
         if (checkInvincible) then
           banPlayer('Use of the GodMode detected')
         else
@@ -145,7 +145,8 @@ if (Shared.AntiGodMode) then
               FreezeEntityPosition(curVehicle, true)
             end
           end
-        end
+        end--]]
+	-- upgrading to a better code
       end
     end
   )
